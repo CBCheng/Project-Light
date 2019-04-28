@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Project Light</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name=”format-detection” content=”telephone=no”>
+	<link rel="icon" type="text/css" href="../img/LOGO.png">
+	<!-- css&font -->
+	<link rel="stylesheet" type="text/css" href="../css/desComInsideCss/desComInside13.css">
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" rel="stylesheet">
+	
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<!-- jQuery UI-->
+	<script src="../js/jquery-ui.min.js"></script>
+	
+	<script src="../js/modernizr-custom.js"></script>
+</head>
+<body>
+<!-- (下)手機專屬上方欄 -->
+	<div class="mobBar">
+		<div class="hambuger">
+			<div class="hbItem">
+				<span></span>
+			</div>
+		</div>
+		<a href="../index.html" class="barLogo">
+			<img src="../img/LOGO.png">
+		</a>
+	</div>
+	<div class="pushItem"></div>
+<!-- (下)側邊導覽列 -->
+	<div class="menuBar">
+		<a href="../index.html" class="homeLogo">
+			<img src="../img/LOGO_word.png">
+		</a>
+		<nav class="menu">
+			<a href="../findDesigner.html">找設計師</a>
+			<a href="../desCompetition.html">公開徵件 <span></span></a>
+			<a href="../desPortfolio.html">案例作品</a>
+			<a href="../index.html#aboUs">關於我們</a>
+			<a href="../index.html#conUs">聯絡我們</a>
+		</nav>
+	</div>
+
+
+<!-- ===== part 1 ===== -->
+	<div class="content">
+		<div class="contentItem">
+			<a href="../desCompetition.html#logo13" class="return">
+				<img src="../img/icon/return-button.png">
+			</a>
+			<div class="derPic">
+				<img src="../img/vendor_logo/vendor_logo13_200x200.jpg">
+			</div>
+			<div class="text">
+				<h3>Japan All Line</h3>
+				<h4>大阪環狀線電聯車車廂設計</h4>
+				<div class="desData">
+					<img src="../img/telephone-handle-silhouette.png">
+					<h4>02-9487-987 轉 112 陳先生</h4><br>
+					<img src="../img/envelope.png" class="email">
+					<h4>leeshilee@gmail.com</h4><br>
+					<img src="../img/maps-and-flags.png" class="address">
+					<h4>106台北市大安區光復南路902號</h4>
+				</div>
+				<p>What if you can drink banana milk like peeling a fresh banana to take a bite? You can wrap off a bottle of banana milk like peeling a real banana. By reflecting the emotion and the memory of peeling a banana, this packing idea can highlight the freshness and sweetness of the banana milk as you take a bit of the real banana. By reflecting the emotion and the memory of peeling a banana, this packing idea can highlight the freshness and sweetness of the banana milk as you take a bit of the real banana.</p>	
+			</div>
+			<div class="porPic">
+				<img src="../img/companyPic/competition_vendor_data.jpg">
+			</div>
+		</div>
+	</div>
+<!-- == part1 == -->
+
+
+<!-- ===== part2 ===== -->
+	<div class="footer">
+		<div class="fooItem">
+			
+			<p>© Copyright by Porject Light. All Rights Reserved.</p>
+			<div class="footDes">
+				<img src="../img/foot-nobg-pin.png" class="footDesFor1">
+				<img src="../img/foot-nobg-link.png" class="footDesFor2">
+				<img src="../img/foot-nobg-top.png" class="footDesFor4">
+				<img src="../img/foot-nobg-fb.png" class="footDesFor3">
+				<a href="#" class="footA1"></a>
+				<div class="footA2Clip">
+					<a href="#" class="footA2"></a>
+				</div>
+					<a href="#" class="footA3"></a>
+				<div class="footA4Clip">
+					<a href="#" class="footA4"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- == part2 == -->
+
+<!-- =========== jQuary ============ -->
+<script>
+	$(function(){
+		$(".hbItem").click(function(){
+			$(".menuBar").toggleClass("moveBar");
+		});
+	});
+
+</script>
+
+<!-- === footer move + Modernizr === -->
+<script type="text/javascript">
+	function mq() {
+	    var query = Modernizr.mq('(min-width: 768px)');
+	    if (query) {
+
+
+	        $('.footA1').hover(function(){
+				$('.footDesFor1').stop(true).animate({
+					bottom: '0%'
+				},500,'easeInSine');
+			},function(){
+				$('.footDesFor1').animate({bottom: '-5%'},700,'easeOutBounce');
+			});
+			$('.footA2Clip').hover(function(){
+				$('.footDesFor2').stop(true).animate({
+					bottom: '0%'
+				},500,'easeInSine');
+			},function(){
+				$('.footDesFor2').animate({bottom: '-5%'},700,'easeOutBounce');
+			});
+			$('.footA3').hover(function(){
+				$('.footDesFor3').stop(true).animate({
+					bottom: '0%'
+				},500,'easeInSine');
+			},function(){
+				$('.footDesFor3').animate({bottom: '-5%'},700,'easeOutBounce');
+			});
+			$('.footA4Clip').hover(function(){
+				$('.footDesFor4').stop(true).animate({
+					bottom: '0%'
+				},500,'easeInSine');
+			},function(){
+				$('.footDesFor4').animate({bottom: '-5%'},700,'easeOutBounce');
+			});
+
+
+	    }
+	};
+	$(window).resize(function() {
+	    mq();
+	});
+	mq();
+</script>
+
+
+<!-- === footer move === -->
+
+</body>
+</html>

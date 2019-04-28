@@ -1,0 +1,539 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*{
+	/*outline: 1px solid #f00;*/
+	box-sizing: border-box;
+}
+/*===== menu bar =====*/
+/*(下)手機專屬上方欄*/
+.mobBar{
+	width: 100%;
+	height: 65px;
+	box-shadow: 0px 4px 12px 4px rgba(20%,20%,20%,0.5);
+	position: fixed;
+	background-color: rgba(100%,100%,100%,.9);
+	z-index: 6;
+}
+.hambuger{
+	display: inline-block;
+	width: 65px;
+	height: 100%;
+	padding: 10px;
+	position: relative;
+}
+.hbItem{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.hbItem span{
+	display: block;
+	width: 100%;
+	height: 5px;
+	background-color: #000;
+	position: absolute;
+	top: 44%;
+}
+.hbItem :before{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 5px;
+	background-color: #000;
+	position: absolute;
+	top: -10px;
+}
+.hbItem :after{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 5px;
+	background-color: #000;
+	position: absolute;
+	bottom: -10px;
+}
+.barLogo{
+	display: inline-block;
+	width: 45px;
+	position: absolute;
+	right: 10px;
+	padding-top: 10px;
+	vertical-align: top;
+}
+.barLogo img{
+	width: 100%;
+}
+.pushItem{
+	width: 100%;
+	height: 65px;
+}
+
+/*(下)側邊導覽列*/
+.menuBar{
+	width: 40%;
+	height: 100vh;
+	position: fixed;
+	background-color: #fff;
+	box-shadow: 0px 4px 12px 4px rgba(20%,20%,20%,0.5);
+	margin-left: -50%;
+	transition: .5s;
+	z-index: 5;
+}
+.moveBar{
+	margin-left: 0;
+}
+.homeLogo{ display: none;}
+.menu a{
+	display: block;
+	margin-top: 25%;
+	color: #000;
+	font-size: 5vw;
+	font-family: 微軟正黑體;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+}
+.menu a+a{
+	margin-top: 20%;
+}
+.menu a:after{
+	content: '';
+	display: block;
+	width: 80%;
+	height: 2px;
+	margin: auto;
+	background-color: #ccc;
+	margin-top: 20%;
+}
+@media screen and (min-width: 992px){
+	.mobBar{ display: none; }
+	.pushItem{ display: none; }
+	.menuBar{
+		width: 15%;
+		margin-left: 0;
+		transition: 0s;
+	}
+	.homeLogo{
+		display: block;
+		width: 40%;
+		margin: auto;
+		padding-top: 20%;
+	}
+	.homeLogo img{
+		width: 100%;
+		vertical-align: top;
+	}
+	.menu{
+		position: relative;
+	}
+	.menu a{
+		font-size: 1.3vw;
+		margin-top: 50%;
+		color: #aaa;
+	}
+	.menu a:hover{color: #eb5d2d;}
+	.menu a:nth-child(3){
+		color: #000;
+	}
+	.menu a+a{
+		margin-top: 20%;
+	}
+	.menu a:after{
+		display: none;
+	}
+	.menu span{
+		display: inline-block;
+		height: 1.3vw;
+		width: 4%;
+		background-color: #eb5d2d;
+		vertical-align: bottom;
+		margin-left: 8%;
+		position: absolute;
+	}
+}
+@media screen and (min-width: 992px) and (max-width: 1200px){
+	.menu a{
+		font-size: 1.6vw;
+		margin-top: 60%;
+	}
+	.menu a+a{
+		margin-top: 30%;
+	}
+	.menu span{
+		height: 1.6vw;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+	.menu a{
+		font-size: 3vw;
+		margin-top: 12%;
+	}
+	.menu a+a{
+		margin-top: 10%;
+	}
+	.menu a:after{
+		margin-top: 10%;
+	}
+}
+@media screen and (min-width: 582px) and (max-width: 767px){
+	.menu a{
+		font-size: 3vw;
+		margin-top: 12%;
+	}
+	.menu a+a{
+		margin-top: 10%;
+	}
+	.menu a:after{
+		margin-top: 10%;
+	}
+}
+/*== menu bar ==*/
+
+/*===== content ======*/
+.content{
+	width: 100%;
+	height: 0;
+	padding-bottom: 400%;
+	position: relative;
+}
+.contentItem{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #515052;
+}
+.return{
+	width: 10%;
+	display: block;
+	position: absolute;
+	top: 2.5%;
+	right: 3%;
+}
+.return img{
+	width: 100%;
+	vertical-align: top;
+}
+.derPic{
+	width: 50%;
+	margin: 10% 0% 8% 10%;
+	box-shadow: 0px 0px 20px 8px rgba(20%,20%,20%,0.5);
+}
+.derPic img{
+	width: 100%;
+	vertical-align: top;
+}
+.text{
+	width: 80%;
+	margin: auto;
+	position: relative;
+	box-shadow: 0px 0px 20px 8px rgba(20%,20%,20%,0.5);
+	padding: 3%;
+}
+.text h3{
+	font: 10vw/13vw Ubuntu;
+	color: #eb5d2d;
+}
+.text h4{
+	font: 5vw/10vw Ubuntu;
+	color: #fff;
+}
+.logo{
+	width: 30%;
+	position: absolute;
+	top: 9%;
+	right: 3%;
+}
+.desData{
+	width: 100%;
+}
+.desData img{
+	margin-top: 5%;
+	width: 12%;
+}
+.desData:after{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #fff;
+}
+.text h5{
+	font: 5vw/10vw Ubuntu;
+	color: #fff;
+	margin-top: 7%;
+}
+.text p{
+	font: 4vw/5vw Ubuntu;
+	color: #fff;
+	text-align: justify;
+}
+.porPic{
+	width: 80%;
+	margin: 8% auto;
+	box-shadow: 0px 0px 20px 8px rgba(20%,20%,20%,0.5);
+}
+.porPic img{
+	vertical-align: top;
+	width: 100%;
+}
+@media screen and (min-width: 992px){
+	.content{
+		width: 85%;
+		padding-bottom: 61%;
+		float: right;
+	}
+	.contentItem{
+		font-size: 0;
+	}
+	.return{
+		width: 3%;
+		top: 3.5%;
+		right: 7.2%;
+	}
+	.derPic{
+		width: 14%;
+		margin: 10% 3% 10% 8.5%;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.text{
+		width: 32%;
+		margin: 10% 3% 10% 0%;
+		position: relative;
+		padding: 1%;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.text h3{
+		font: 1.8vw/3vw Ubuntu;
+	}
+	.text h4{
+		font: 1.3vw/3vw Ubuntu;
+	}
+	.logo{
+		top: 3%;
+		right: 3%;
+	}
+	.desData h4{
+		display: inline-block;
+		vertical-align: middle;
+		margin: 5% 0% 0% 5%;
+	}
+	.desData img{
+		display: inline-block;
+		vertical-align: middle;
+		width: 8%;
+	}
+	.desData h4:last-child{
+		font: 1.4vw/2vw 微軟正黑體;
+		margin-top: 0%;
+	}
+	.address{
+		margin-bottom: 5%;
+	}
+	.text h5{
+		font: 2vw/2vw Ubuntu;
+		margin-top: 10%;
+	}
+	.text p{
+		font: 1vw/1.5vw Ubuntu;
+	}
+	.porPic{
+		vertical-align: top;
+		display: inline-block;
+		width: 32%;
+		margin: 10% auto;
+	}
+}
+/*== content ==*/
+
+/*===== footer =====*/
+.footer{
+	width: 100%;
+	height: 0%;
+	padding-bottom: 80%;
+	position: relative;
+}
+.fooItem{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+}
+.fooItem p{
+	font: 3vw/15vw Ubuntu;
+	text-align: center;
+}
+.footDes{
+	width: 100%;
+	height: 81%;
+}
+.footDesFor1,.footDesFor2,.footDesFor3,.footDesFor4{
+	display: inline-block;
+	position: absolute;
+	bottom: -5%;
+}
+.footDesFor1{
+	width: 30%;
+	left: 0;
+}
+.footDesFor2{
+	width: 30%;
+	left: 20%;
+}
+.footDesFor3{
+	width: 30%;
+	left: 45%;
+}
+.footDesFor4{
+	width: 30%;
+	left: 70%;
+}
+.footA1,.footA2,.footA3,.footA4{
+	display: inline-block;
+	position: absolute;
+}
+.footA1{
+	width: 19%;
+	height: 11%;	
+	left: 2%;
+	bottom: 47%;
+	transform: rotate(5deg);
+}
+.footA2{
+	width: 19%;
+	height: 17%;
+	left: 23%;
+	bottom: 60%;
+	transform: rotate(-20deg);
+}
+.footA3{
+	width: 23%;
+	height: 16%;
+	left: 48%;
+	bottom: 53%;
+	transform: rotate(-10deg);
+}
+.footA4{
+	width: 23%;
+	height: 9.5%;
+	left: 74%;
+	bottom: 47%;
+	transform: rotate(5deg);
+}
+@media screen and (min-width: 992px){
+	.footer{
+		width: 85%;
+		padding-bottom: 43%;
+		float: right;
+	}
+	.fooItem p{
+		font: 1.2vw/7vw Ubuntu;
+	}
+	.footDes{
+		height: 84%;
+	}
+	.footDesFor1{
+		width: 20%;
+		left: 10%;
+	}
+	.footDesFor2{
+		width: 20%;
+		left: 30%;
+	}
+	.footDesFor3{
+		width: 20%;
+		left: 52%;
+	}
+	.footDesFor4{
+		width: 20%;
+		left: 75%;
+	}
+	.footA1{
+		width: 12.5%;
+		height: 15.5%;	
+		left: 11.5%;
+		bottom: 48%;
+	}
+	.footA2Clip{
+		-webkit-clip-path: ellipse(43% 27% at 50% 50%);
+		clip-path: ellipse(43% 27% at 50% 50%);
+		width: 18%;
+		height: 40%;
+		position: absolute;
+		left: 29.5%;
+		bottom: 51%;
+		transform: rotate(-20deg);
+	}
+	.footA2{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+	.footA3{
+		width: 18.5%;
+		height: 18%;
+		left: 52.5%;
+		bottom: 56%;
+	}
+	.footA4Clip{
+		-webkit-clip-path: polygon(4% 73%, 94% 73%, 90% 100%, 0% 100%);
+		clip-path: polygon(4% 73%, 94% 73%, 90% 100%, 0% 100%);
+		width: 19%;
+		height: 40%;
+		position: absolute;
+		left: 76.5%;
+		bottom: 50%;
+		transform: rotate(5deg);
+	}
+	.footA4{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		top: 5%;
+		left: 0;	
+	}
+/*== footer ==*/

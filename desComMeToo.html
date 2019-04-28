@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Project Light</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- css&font -->
+	<link rel="stylesheet" type="text/css" href="css/desComMeToo.css">
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" rel="stylesheet">
+	
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<!-- jQuery UI-->
+	<script src="js/jquery-ui.min.js"></script>
+	
+	<script src="js/modernizr-custom.js"></script>
+</head>
+<body>
+<!-- (下)手機專屬上方欄 -->
+	<div class="mobBar">
+		<div class="hambuger">
+			<div class="hbItem">
+				<span></span>
+			</div>
+		</div>
+		<a href="index.html" class="barLogo">
+			<img src="img/LOGO.png">
+		</a>
+	</div>
+	<div class="pushItem"></div>
+<!-- (下)側邊導覽列 -->
+	<div class="menuBar">
+		<a href="index.html" class="homeLogo">
+			<img src="img/LOGO_word.png">
+		</a>
+		<nav class="menu">
+			<a href="findDesigner.html">找設計師</a>
+			<a href="desCompetition.html">公開徵件 <span></span></a>
+			<a href="desPortfolio.html">案例作品</a>
+			<a href="index.html#aboUs">關於我們</a>
+			<a href="index.html#conUs">聯絡我們</a>
+		</nav>
+	</div>
+
+
+<!-- ===== part 1 ===== -->
+	<div class="content">
+		<div class="contentItem">
+			<a href="desCompetition.html" class="return">
+				<img src="img/icon/icon2.png">
+			</a>
+			<form class="clientData">
+				<input type="text" name="name" placeholder="姓名">
+				<input type="text" name="phone" placeholder="電話">
+				<input type="text" name="comName" placeholder="公司名稱">
+				<input type="email" name="email" placeholder="信箱">
+				<label>選擇專案類別</label>
+				<select name="desType" class="desType">
+					<option value="productDsigner">工業產品設計類</option>
+					<option value="interiorDesigner">室內空間設計類</option>
+					<option value="graphicDesigner">視覺傳達設計類</option>
+					<option value="landscapeDesigner">景觀都市設計類</option>
+				</select>
+				<textarea>請輸入您的專案內容與需求...</textarea>
+				<input type="submit" name="clientDataSub" value="確認提交">
+			</form>
+			<h4>※公開徵件注意事項</h4>
+			<p>Sapiente officiis, aliquid consectetur adipisicing elit. Sapiente officiis, aliquid amet eos architecto modi odit ut omnis dignissimos aperiam.<br><br>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo delectus totam facilis reprehenderit ipsum mollitia. Porro magnam aut natus repellendus.<br><br>
+			Consectetur adipisicing elit. Illo delectus totam facilis reprehenderit ipsum mollitia. Porro magnam aut natus repellendus.Sapiente officiis, aliquid consectetur adipisicing elit.
+			</p>
+		</div>
+	</div>
+<!-- == part1 == -->
+
+
+<!-- ===== part2 ===== -->
+	<div class="footer">
+		<div class="fooItem">
+			
+			<p>© Copyright by Porject Light. All Rights Reserved.</p>
+			<div class="footDes">
+				<img src="img/foot-nobg-pin.png" class="footDesFor1">
+				<img src="img/foot-nobg-link.png" class="footDesFor2">
+				<img src="img/foot-nobg-top.png" class="footDesFor4">
+				<img src="img/foot-nobg-fb.png" class="footDesFor3">
+				<a href="https://www.pinterest.com" class="footA1"></a>
+				<div class="footA2Clip">
+					<a href="https://www.linkedin.com" class="footA2"></a>
+				</div>
+					<a href="https://www.facebook.com" class="footA3"></a>
+				<div class="footA4Clip">
+					<a href="#" class="footA4"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- == part2 == -->
+
+<!-- =========== jQuary ============ -->
+<script>
+	$(function(){
+		$(".hbItem").click(function(){
+			$(".menuBar").toggleClass("moveBar");
+		});
+	});
+
+</script>
+
+<!-- === footer move + Modernizr === -->
+<script type="text/javascript">
+	function mq() {
+	    var query = Modernizr.mq('(min-width: 768px)');
+	    if (query) {
+
+
+	        $('.footA1').hover(function(){
+				$('.footDesFor1').stop(true).animate({
+					bottom: '0%'
+				},500,'easeInSine');
+			},function(){
+				$('.footDesFor1').animate({bottom: '-5%'},700,'easeOutBounce');
+			});
+			$('.footA2Clip').hover(function(){
+				$('.footDesFor2').stop(true).animate({
+					bottom: '0%'
+				},500,'easeInSine');
+			},function(){
+				$('.footDesFor2').animate({bottom: '-5%'},700,'easeOutBounce');
+			});
+			$('.footA3').hover(function(){
+				$('.footDesFor3').stop(true).animate({
+					bottom: '0%'
+				},500,'easeInSine');
+			},function(){
+				$('.footDesFor3').animate({bottom: '-5%'},700,'easeOutBounce');
+			});
+			$('.footA4Clip').hover(function(){
+				$('.footDesFor4').stop(true).animate({
+					bottom: '0%'
+				},500,'easeInSine');
+			},function(){
+				$('.footDesFor4').animate({bottom: '-5%'},700,'easeOutBounce');
+			});
+
+
+	    }
+	};
+	$(window).resize(function() {
+	    mq();
+	});
+	mq();
+</script>
+
+
+<!-- === footer move === -->
+
+</body>
+</html>
